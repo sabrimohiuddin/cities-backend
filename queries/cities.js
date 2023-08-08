@@ -24,8 +24,8 @@ const getCity = async (id) =>{
 const createCity = async (city) =>{
     try {
         const newCity = await db.one(
-            "INSERT INTO cities (city, country, image, has_visited, population) VALUES($1, $2, $3, $4, $5) RETURNING *",
-            [city.city, city.country, city.image, city.has_visited, city.population]
+            "INSERT INTO cities (city, country, image, has_visited, ticket_price) VALUES($1, $2, $3, $4, $5) RETURNING *",
+            [city.city, city.country, city.image, city.has_visited, city.ticket_price]
         )
         return newCity;
     } catch (error){
@@ -50,8 +50,8 @@ const deleteCity = async (id) =>{
 const updateCity = async (id, city) =>{
     try {
         const updatedCity = await db.one(
-            "UPDATE cities SET city=$1, country=$2, image=$3, has_visited=$4, population=$5 WHERE id=$6 RETURNING *",
-            [city.city, city.country, city.image, city.has_visited, city.population, id]
+            "UPDATE cities SET city=$1, country=$2, image=$3, has_visited=$4, ticket_price=$5 WHERE id=$6 RETURNING *",
+            [city.city, city.country, city.image, city.has_visited, city.ticket_price, id]
         )
         return updatedCity;
     } catch (error){

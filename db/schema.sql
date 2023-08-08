@@ -9,7 +9,7 @@ CREATE TABLE cities (
  country TEXT,
  image TEXT,
  has_visited BOOLEAN
- population NUMBER
+ ticket_price NUMBER
 );
 
 DROP TABLE IF EXISTS comments;
