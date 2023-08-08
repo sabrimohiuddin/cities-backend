@@ -1,0 +1,22 @@
+DROP DATABASE IF EXISTS cities_dev;
+CREATE DATABASE cities_dev;
+
+\c cities_dev;
+
+CREATE TABLE cities (
+ id SERIAL PRIMARY KEY,
+ city TEXT NOT NULL,
+ country TEXT,
+ image TEXT,
+ has_visited BOOLEAN
+ population NUMBER
+);
+
+DROP TABLE IF EXISTS comments;
+
+CREATE TABLE comments (
+ id SERIAL PRIMARY KEY,
+ commenter TEXT,
+ title TEXT,
+ content TEXT
+);
