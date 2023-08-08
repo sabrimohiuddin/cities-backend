@@ -18,5 +18,7 @@ CREATE TABLE comments (
  id SERIAL PRIMARY KEY,
  commenter TEXT,
  title TEXT,
- content TEXT
+ content TEXT,
+ city_id INTEGER REFERENCES cities (id)
+ ON DELETE CASCADE
 );
