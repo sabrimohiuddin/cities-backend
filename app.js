@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 
 // Cities ROUTES
 const cityController = require("./controllers/cityController.js");
-app.use("/songs", cityController);
+app.use("/cities", cityController);
 
 // 404 PAGE
 app.get("*", (req, res) => {
