@@ -12,7 +12,9 @@ const {
 // INDEX
 comments.get("/", async (req, res) => {
   const { cityId } = req.params;
-
+console.log(" this is comments")
+console.log(req.params)
+console.log(cityId)
   try {
     const allComments = await getAllComments(cityId);
     res.json(allComments);
@@ -68,3 +70,5 @@ comments.delete("/:id", async (req, res) => {
 //     "city_id": "5"
 // }
 module.exports = comments;
+
+

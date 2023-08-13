@@ -20,6 +20,17 @@ const getCity = async (id) =>{
     }
 }
 
+//GET Average Hotel Price from all cities
+// const getAverageHotelPrice = async () => {
+//     try {
+//         const average = await db.one("SELECT AVG(price) AS average FROM cities");
+//         return average.average;
+//     } catch (error) {
+//         return error;
+//     }
+// }
+
+
 //CREATE a City
 const createCity = async (city) =>{
     try {
@@ -64,5 +75,7 @@ module.exports = {
     createCity,
     getCity,
     deleteCity,
-    updateCity
+    updateCity,
+    
 };
+

@@ -1,7 +1,7 @@
 const express = require("express");
 const cities = express.Router();
 const commentsController = require("./commentsController.js");
-cities.use("/:cityId/reviews", commentsController);
+cities.use("/:cityId/comments", commentsController);
 
 const {
   getAllCities,
@@ -9,12 +9,15 @@ const {
   createCity,
   deleteCity,
   updateCity,
+  
 } = require("../queries/cities");
 
 // Replace checkBookmarks.js with checkCities.js for cities validations
 const { checkBoolean, checkName, validateURL } = require("../validations/checkCities.js");
 
-// INDEX
+
+
+//INDEX
 cities.get("/", async (req, res) => {
   const allCities = await getAllCities();
   if (allCities[0]) {
@@ -64,3 +67,5 @@ cities.put("/:id", checkName, checkBoolean, validateURL, async (req, res) => {
 });
 
 module.exports = cities;
+
+

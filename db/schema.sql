@@ -47,3 +47,5 @@ CREATE TABLE comments (
  city_id INTEGER REFERENCES cities (id)
  ON DELETE CASCADE
 );
+
+
