@@ -12,7 +12,6 @@ const {
 // INDEX
 comments.get("/", async (req, res) => {
   const { cityId } = req.params;
-
   try {
     const allComments = await getAllComments(cityId);
     res.json(allComments);

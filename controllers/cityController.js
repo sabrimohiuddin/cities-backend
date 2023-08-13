@@ -1,7 +1,7 @@
 const express = require("express");
 const cities = express.Router();
 const commentsController = require("./commentsController.js");
-cities.use("/:cityId/reviews", commentsController);
+cities.use("/:cityId/comments", commentsController);
 
 const {
   getAllCities,

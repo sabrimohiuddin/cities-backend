@@ -1,8 +1,8 @@
 const checkName = (req, res, next) => {
-    if (req.body.name) {
+    if (req.body.city) {
       next();
     } else {
-      res.status(400).json({ error: "Name is required" });
+      res.status(400).json({ error: "City is required" });
     }
   };
   
@@ -23,8 +23,8 @@ const checkName = (req, res, next) => {
 
   const validateURL = (req, res, next) => {
     if (
-      req.body.url.substring(0, 7) === "http://" ||
-      req.body.url.substring(0, 8) === "https://"
+      req.body.image.substring(0, 7) === "http://" ||
+      req.body.image.substring(0, 8) === "https://"
     ) {
       return next();
     } else {
